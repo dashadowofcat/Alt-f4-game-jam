@@ -54,7 +54,7 @@ public class GunHandler : MonoBehaviour
     {
         print("shoot");
 
-        Movement.SetVelocity(new Vector2(SideRecoil * Movement.Direction, 0));
+        Movement.AddVelocity(new Vector2(SideRecoil * Movement.Direction, 0));
     }
 
     public void FireDown()
