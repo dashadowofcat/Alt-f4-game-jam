@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float MovementVelocity;
 
+    [HideInInspector] public int Direction;
+
     [HideInInspector] public BoxCollider2D coll;
     [HideInInspector] public SpriteRenderer sprite;
     [HideInInspector] public Rigidbody2D rb;
@@ -45,13 +47,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        MovementVelocity += Input.GetAxisRaw(HorizontalAxis) * AccelerationSpeed * Time.deltaTime;
+        float Horizontal = Input.GetAxisRaw(HorizontalAxis);
+
+        MovementVelocity += Horizontal * AccelerationSpeed * Time.deltaTime;
 
         MovementVelocity = Mathf.Lerp(MovementVelocity, 0, DeccelerationSpeed * Time.deltaTime);
 
         rb.velocity = new Vector2(MovementVelocity, rb.velocity.y);
 
-
+        if(Horizontal != 0) Direction = (Horizontal > 0) ? -1 : 1;
 
         if (Input.GetKeyDown(JumpKey) && IsGrounded())
         {
@@ -92,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         MovementVelocity += velocity.x;
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.BoxCast(GroundDetectorPositon.position, GroundDetectorSize, 0, Vector2.zero, 0, PlatformMask);
     }
