@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
 
     public float JumpReleaseDivider;
-    private bool CanjumpRelease = false;
+    [HideInInspector] public bool CanjumpRelease = false;
 
 
     [Header("Ground detection")]

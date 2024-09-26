@@ -12,6 +12,8 @@ public class GunHandler : MonoBehaviour
     public KeyCode FireDownModifier;
 
     [Header("Gun parameters")]
+    public int HitPause;
+
     public float SideCooldown;
 
     private float SideCoolDownTimer;
@@ -56,19 +58,23 @@ public class GunHandler : MonoBehaviour
 
     public void Fire()
     {
-        print("shoot");
+        Movement.CanjumpRelease = false;
 
         Movement.SetVelocity(new Vector2(SideRecoil * Movement.Direction, 0));
 
         CameraShake.Shake(new Vector2(SideRecoil * Movement.Direction, 0) * SideScreenShake);
+
+        HitPauseManager.Pause(HitPause);
     }
 
     public void FireDown()
     {
-        print("shoot down");
+        Movement.CanjumpRelease = false;
 
         Movement.SetVelocity(new Vector2(0, DownwardRecoil));
 
         CameraShake.Shake(new Vector2(0, DownwardRecoil) * DownwardScreenShake);
+
+        HitPauseManager.Pause(HitPause);
     }
 }
