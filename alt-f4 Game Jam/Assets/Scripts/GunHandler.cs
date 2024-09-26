@@ -18,7 +18,11 @@ public class GunHandler : MonoBehaviour
 
     public float SideRecoil;
 
+    public float SideScreenShake;
+
     public float DownwardRecoil;
+
+    public float DownwardScreenShake;
 
     private bool HasShotDownSinceTouchedGround;
 
@@ -54,7 +58,9 @@ public class GunHandler : MonoBehaviour
     {
         print("shoot");
 
-        Movement.AddVelocity(new Vector2(SideRecoil * Movement.Direction, 0));
+        Movement.SetVelocity(new Vector2(SideRecoil * Movement.Direction, 0));
+
+        CameraShake.Shake(new Vector2(SideRecoil * Movement.Direction, 0) * SideScreenShake);
     }
 
     public void FireDown()
@@ -62,5 +68,7 @@ public class GunHandler : MonoBehaviour
         print("shoot down");
 
         Movement.SetVelocity(new Vector2(0, DownwardRecoil));
+
+        CameraShake.Shake(new Vector2(0, DownwardRecoil) * DownwardScreenShake);
     }
 }
