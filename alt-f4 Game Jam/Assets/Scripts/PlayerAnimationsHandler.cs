@@ -54,9 +54,9 @@ public class PlayerAnimationsHandler : MonoBehaviour
 
         CurrentAnimation = PlayerAnimation.idle;
 
-        if (velocity.y > .1f && !IsGrounded) CurrentAnimation = PlayerAnimation.falling;
+        if (velocity.y < .1f && !IsGrounded) CurrentAnimation = PlayerAnimation.falling;
 
-        if (velocity.y < .1f && !IsGrounded) CurrentAnimation = PlayerAnimation.jumping;
+        if (velocity.y > .1f && !IsGrounded) CurrentAnimation = PlayerAnimation.jumping;
 
         if (MathF.Abs(Input.GetAxisRaw(Movement.HorizontalAxis)) > .3f && IsGrounded) CurrentAnimation = PlayerAnimation.walking;
 
