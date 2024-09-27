@@ -57,7 +57,7 @@ Material:
     - _noise_1: 8
     - _noise_2: 9
     - _noise_3: 10
-    - _pixel_size: 21.2
+    - _pixel_size: 25.89
     - _speed: 0.4
     m_Colors: []
   m_BuildTextureStacks: []
