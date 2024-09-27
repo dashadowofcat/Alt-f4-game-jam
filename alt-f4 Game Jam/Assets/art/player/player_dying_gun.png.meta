@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 931df5127c0186c43b93f337fc9a44c8
+guid: 251631a8f12766c41944662bb12bd6db
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_dying_gun_3
+      name: player_dying_gun_5
       rect:
         serializedVersion: 2
         x: 21
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db334ea33297b4847a16a08a10b5ed88
-      internalID: 915298768
+      spriteID: b10346ad92783ae45a4d7e9492746efa
+      internalID: 369293750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_dying_gun_4
+      name: player_dying_gun_6
       rect:
         serializedVersion: 2
         x: 81
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ed271602424b749b2fd5dfc55c2727
-      internalID: -1088340417
+      spriteID: da553a88b0c1dec4ca74aad74256b614
+      internalID: -201751462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_dying_gun_5
+      name: player_dying_gun_7
       rect:
         serializedVersion: 2
         x: 142
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea9ddec8505fe5e4392bb92c11dd5ae6
-      internalID: -1893584059
+      spriteID: c0577fc5175d2474c883c3cf7622fc79
+      internalID: 153672358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_dying_gun_6
+      name: player_dying_gun_8
       rect:
         serializedVersion: 2
         x: 200
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ede1e4367e396d43a97a78a1665e942
-      internalID: 257946313
+      spriteID: 303ae7d665ad4de49a6aa25df9d839a3
+      internalID: 228101787
       vertices: []
       indices: 
       edges: []
@@ -197,19 +197,40 @@ TextureImporter:
       name: player_dying_gun_10
       rect:
         serializedVersion: 2
-        x: 240
-        y: 17
+        x: 300
+        y: 16
         width: 60
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 42
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d276eb273eec244886daea9a6882cb2
-      internalID: -36014791
+      spriteID: 0a3015be04ba3f343ad0d48a054c7e81
+      internalID: -1107403593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_dying_gun_16
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 13
+        width: 29
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942e90efcbb336f45bf147d94df0760e
+      internalID: 893249300
       vertices: []
       indices: 
       edges: []
@@ -225,18 +246,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_dying_gun_0: 848754736
-      player_dying_gun_1: 1072212847
-      player_dying_gun_10: -36014791
-      player_dying_gun_11: 1570735317
-      player_dying_gun_2: 234381757
-      player_dying_gun_3: 915298768
-      player_dying_gun_4: -1088340417
-      player_dying_gun_5: -1893584059
-      player_dying_gun_6: 257946313
-      player_dying_gun_7: -441327582
-      player_dying_gun_8: -176823942
-      player_dying_gun_9: 1704397009
+      player_dying_gun_0: -1415535974
+      player_dying_gun_1: 1072398421
+      player_dying_gun_10: -1107403593
+      player_dying_gun_11: -882473581
+      player_dying_gun_12: -1246890895
+      player_dying_gun_13: -566076321
+      player_dying_gun_14: 769558855
+      player_dying_gun_15: -661138894
+      player_dying_gun_16: 893249300
+      player_dying_gun_17: -385451718
+      player_dying_gun_2: 1033322378
+      player_dying_gun_3: -1704662556
+      player_dying_gun_4: -686376900
+      player_dying_gun_5: 369293750
+      player_dying_gun_6: -201751462
+      player_dying_gun_7: 153672358
+      player_dying_gun_8: 228101787
+      player_dying_gun_9: 1127720880
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
