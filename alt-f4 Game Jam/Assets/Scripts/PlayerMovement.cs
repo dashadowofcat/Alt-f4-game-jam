@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float AccelerationSpeed;
     public float DeccelerationSpeed;
+    public float MaxSpeed;
 
     [Header("Jump")]
     public LayerMask PlatformMask;
@@ -49,9 +50,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float Horizontal = Input.GetAxisRaw(HorizontalAxis);
 
-        MovementVelocity += Horizontal * AccelerationSpeed * Time.deltaTime;
+        if (Horizontal != 0)
+        {
+            MovementVelocity += Horizontal * AccelerationSpeed * Time.deltaTime;
+        }
+        else
+        {
+            MovementVelocity = Mathf.MoveTowards(MovementVelocity, 0, DeccelerationSpeed * Time.deltaTime);
+        }
 
-        MovementVelocity = Mathf.Lerp(MovementVelocity, 0, DeccelerationSpeed * Time.deltaTime);
+        MovementVelocity = Mathf.Clamp(MovementVelocity, -MaxSpeed, MaxSpeed);
 
         rb.velocity = new Vector2(MovementVelocity, rb.velocity.y);
 
