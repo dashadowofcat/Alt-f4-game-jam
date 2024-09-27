@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: prequel dialogue
   m_EditorClassIdentifier: 
   dialogue:
-  - Name: ???
+  - Name: 
     Delay: 0.04
-    Text: "wake up the \ngame is #rebooting#"
-  - Name: ???
+    Text: 'quick!
+
+      game is #rebooting#'
+  - Name: 
     Delay: 0.04
     Text: "get to a safe folder or \nyou'll be #deleted#"
