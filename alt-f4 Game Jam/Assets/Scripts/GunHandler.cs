@@ -27,8 +27,6 @@ public class GunHandler : MonoBehaviour
 
     public float DownwardScreenShake;
 
-    public LayerMask BreakableWallMask;
-
     [HideInInspector] public bool HasShotDownSinceTouchedGround;
 
     [HideInInspector] public bool IsShootingSide;
@@ -76,9 +74,12 @@ public class GunHandler : MonoBehaviour
         HitPauseManager.Pause(HitPause);
 
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, float.PositiveInfinity, BreakableWallMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(-Movement.Direction, 0), float.PositiveInfinity);
 
-        if(hit.transform != null) hit.transform.GetComponent<BreakableWall>().Break();
+        if (hit.transform != null)
+        {
+            if(hit.transform.GetComponent<BreakableWall>() != null) hit.transform.GetComponent<BreakableWall>().Break();
+        }
     }
 
     private void CancelIsShootingSide()

@@ -36,6 +36,13 @@ public class PlayerMortality : MonoBehaviour
 
     public void Revive()
     {
+        CurrentLevel.AnchorWall();
+
+        foreach (BreakableWall wall in Resources.FindObjectsOfTypeAll<BreakableWall>())
+        {
+            wall.gameObject.SetActive(true);
+        }
+
         transform.position = CurrentLevel.RespawnAnchor.position;
 
         IsDead = false;

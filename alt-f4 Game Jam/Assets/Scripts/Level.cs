@@ -14,6 +14,8 @@ public class Level : MonoBehaviour
 
     public Transform RespawnAnchor;
 
+    public Transform WallAnchor;
+
     public Level[] LevelsToDisable;
 
     public bool PreloadLevel;
@@ -37,6 +39,9 @@ public class Level : MonoBehaviour
 
     public void OnEnter()
     {
+
+        AnchorWall();
+
         foreach (Level level in LevelsToDisable)
         {
             level.DisableLevel();
@@ -55,5 +60,10 @@ public class Level : MonoBehaviour
     public void DisableLevel()
     {
         Contents.SetActive(false);
+    }
+
+    public void AnchorWall()
+    {
+        FindObjectOfType<GlitchWall>().transform.position = WallAnchor.transform.position;
     }
 }
