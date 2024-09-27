@@ -76,13 +76,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (GroundDetectorPositon != null) Gizmos.DrawWireCube(GroundDetectorPositon.position, GroundDetectorSize);
 
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, MovementVelocity));
+        Gizmos.DrawLine(transform.position, transform.position + new Vector3(MovementVelocity, 0));
     }
 
-    public Vector2 GetVelocity()
-    {
-        return new Vector2(MovementVelocity, rb.velocity.y);
-    }
+    public Vector2 GetVelocity() => new Vector2(MovementVelocity, rb.velocity.y);
+
 
     public void SetVelocity(Vector2 velocity)
     {

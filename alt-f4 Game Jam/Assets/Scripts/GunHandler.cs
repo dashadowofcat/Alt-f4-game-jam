@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -26,7 +27,9 @@ public class GunHandler : MonoBehaviour
 
     public float DownwardScreenShake;
 
-    private bool HasShotDownSinceTouchedGround;
+    [HideInInspector] public bool HasShotDownSinceTouchedGround;
+
+    [HideInInspector] public bool IsShootingSide;
 
     private PlayerMovement Movement;
 
@@ -42,13 +45,13 @@ public class GunHandler : MonoBehaviour
 
         if (Movement.IsGrounded()) HasShotDownSinceTouchedGround = false;
 
-        if (Input.GetKeyDown(FireKey) && Input.GetKey(FireDownModifier) && HasShotDownSinceTouchedGround == false)
+        if (Input.GetKeyDown(FireKey) && Input.GetKey(FireDownModifier) && !HasShotDownSinceTouchedGround && !Movement.IsGrounded())
         {
             HasShotDownSinceTouchedGround = true;
 
             FireDown();
         }
-        else if (Input.GetKeyDown(FireKey) && SideCoolDownTimer <= 0)
+        else if (Input.GetKeyDown(FireKey) && SideCoolDownTimer <= 0 && !HasShotDownSinceTouchedGround)
         {
             Fire();
             SideCoolDownTimer = SideCooldown;
@@ -58,6 +61,10 @@ public class GunHandler : MonoBehaviour
 
     public void Fire()
     {
+        IsShootingSide = true;
+
+        Invoke("CancelIsShootingSide", .15f);
+
         Movement.CanjumpRelease = false;
 
         Movement.SetVelocity(new Vector2(SideRecoil * Movement.Direction, 0));
@@ -65,6 +72,11 @@ public class GunHandler : MonoBehaviour
         CameraShake.Shake(new Vector2(SideRecoil * Movement.Direction, 0) * SideScreenShake);
 
         HitPauseManager.Pause(HitPause);
+    }
+
+    private void CancelIsShootingSide()
+    {
+        IsShootingSide = false;
     }
 
     public void FireDown()
@@ -76,5 +88,10 @@ public class GunHandler : MonoBehaviour
         CameraShake.Shake(new Vector2(0, DownwardRecoil) * DownwardScreenShake);
 
         HitPauseManager.Pause(HitPause);
+    }
+
+    public static GunHandler Get()
+    {
+        return FindObjectOfType<GunHandler>();
     }
 }

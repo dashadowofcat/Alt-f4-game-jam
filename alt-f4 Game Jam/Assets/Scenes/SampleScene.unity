@@ -611,7 +611,7 @@ Transform:
   m_GameObject: {fileID: 576562459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.497, z: 0}
+  m_LocalPosition: {x: 0, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 766557292}
   - component: {fileID: 766557296}
   - component: {fileID: 766557297}
+  - component: {fileID: 766557299}
   - component: {fileID: 766557295}
   - component: {fileID: 766557294}
   - component: {fileID: 766557298}
@@ -813,8 +814,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &766557295
 BoxCollider2D:
@@ -848,7 +849,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.43, y: 0}
@@ -859,7 +860,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.57, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &766557296
 MonoBehaviour:
@@ -876,7 +877,7 @@ MonoBehaviour:
   HorizontalAxis: Horizontal
   JumpKey: 122
   AccelerationSpeed: 250
-  DeccelerationSpeed: 20
+  DeccelerationSpeed: 0.5
   PlatformMask:
     serializedVersion: 2
     m_Bits: 8
@@ -884,7 +885,7 @@ MonoBehaviour:
   JumpReleaseDivider: 2
   CanjumpRelease: 0
   GroundDetectorPositon: {fileID: 576562460}
-  GroundDetectorSize: {x: 0.9, y: 0.3}
+  GroundDetectorSize: {x: 0.5, y: 0.13}
   Direction: 0
   coll: {fileID: 0}
   sprite: {fileID: 0}
@@ -909,6 +910,7 @@ MonoBehaviour:
   SideScreenShake: 0.01
   DownwardRecoil: 20
   DownwardScreenShake: 0.01
+  HasShotDownSinceTouchedGround: 0
 --- !u!95 &766557298
 Animator:
   serializedVersion: 5
@@ -930,6 +932,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &766557299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766557290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b323aa792f7a6334ca90ce7e862ab404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAnimation: 0
+  Clips:
+  - Animation: 0
+    Clip: {fileID: 7400000, guid: b67f70db0cf2bfd4e98de02f0fb99b32, type: 2}
+  - Animation: 1
+    Clip: {fileID: 7400000, guid: 69373950abdf93c4f9a32dc7b7b656b2, type: 2}
+  - Animation: 3
+    Clip: {fileID: 7400000, guid: dc6048ebae5938a469fafe9e771bf467, type: 2}
+  - Animation: 2
+    Clip: {fileID: 7400000, guid: 134362aa42f48ab4f99e246979f3bfe9, type: 2}
+  - Animation: 4
+    Clip: {fileID: 7400000, guid: 0dc35355588981e48b725709ca753b62, type: 2}
+  - Animation: 5
+    Clip: {fileID: 7400000, guid: dacabccf1a2b9c54fa3d9313b2ed76d8, type: 2}
 --- !u!1 &869210277
 GameObject:
   m_ObjectHideFlags: 0
