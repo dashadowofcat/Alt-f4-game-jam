@@ -18,4 +18,4 @@ MonoBehaviour:
     Text: "wake up the \ngame is #rebooting#"
   - Name: ???
     Delay: 0.04
-    Text: "get to a safe folder soon or \nyou will be #corrupted#"
+    Text: "get to a safe folder or \nyou'll be #deleted#"
