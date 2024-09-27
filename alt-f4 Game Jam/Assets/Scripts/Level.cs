@@ -12,6 +12,8 @@ public class Level : MonoBehaviour
 
     public Transform CameraAnchor;
 
+    public Transform RespawnAnchor;
+
     public Level[] LevelsToDisable;
 
     public bool PreloadLevel;
@@ -25,6 +27,10 @@ public class Level : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (PreloadLevel) return;
+
+        if (!collision.CompareTag("Player")) return;
+
+        collision.GetComponent<PlayerMortality>().CurrentLevel = this;
 
         OnEnter();
     }

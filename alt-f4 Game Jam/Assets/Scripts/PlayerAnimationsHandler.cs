@@ -11,6 +11,7 @@ public class PlayerAnimationsHandler : MonoBehaviour
     private PlayerMovement Movement;
     private SpriteRenderer Renderer;
     private Animator Animator;
+    private PlayerMortality Mortality;
 
 
 
@@ -21,7 +22,8 @@ public class PlayerAnimationsHandler : MonoBehaviour
         jumping,
         falling,
         fireDown,
-        FireSide
+        FireSide,
+        dying
     }
 
     public PlayerAnimation CurrentAnimation;
@@ -40,6 +42,7 @@ public class PlayerAnimationsHandler : MonoBehaviour
     {
         Movement = PlayerMovement.Get();
         Gun = GunHandler.Get();
+        Mortality = PlayerMortality.Get();
         Renderer = GetComponent<SpriteRenderer>();
         Animator = GetComponent<Animator>();
     }
@@ -63,6 +66,8 @@ public class PlayerAnimationsHandler : MonoBehaviour
         if (Gun.HasShotDownSinceTouchedGround) CurrentAnimation = PlayerAnimation.fireDown;
 
         if (Gun.IsShootingSide) CurrentAnimation = PlayerAnimation.FireSide;
+
+        if(Mortality.IsDead) CurrentAnimation = PlayerAnimation.dying;
 
         Animator.CrossFade(Clips.Where(C => C.Animation == CurrentAnimation).FirstOrDefault().Clip.name, 0, 0);
     }

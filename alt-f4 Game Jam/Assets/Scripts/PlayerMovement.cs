@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public SpriteRenderer sprite;
     [HideInInspector] public Rigidbody2D rb;
 
+    public bool Frozen;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,6 +50,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(Frozen)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         float Horizontal = Input.GetAxisRaw(HorizontalAxis);
 
         if (Horizontal != 0)
