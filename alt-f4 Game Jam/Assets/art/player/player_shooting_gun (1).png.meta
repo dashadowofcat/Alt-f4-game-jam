@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97e959fb8e06ccc46a3a054daf4b92e6
+guid: 6adb9f534418f7a41832cf84d49e8a1b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,39 +93,26 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_shooting_gun_0
+      name: player_shooting_gun (1)_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 17
-        height: 21
+        x: 8
+        y: 14
+        width: 14
+        height: 27
       alignment: 9
-      pivot: {x: 0.4, y: 0}
+      pivot: {x: 0.3, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6000be43422e7fc42a04de723ee52af1
-      internalID: -1022640605
+      spriteID: be8fbba9c24f0a643a4f0cc13a435faa
+      internalID: -1460419369
       vertices: []
       indices: 
       edges: []
@@ -141,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_shooting_gun_0: -1022640605
+      player_shooting_gun (1)_0: -1460419369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
