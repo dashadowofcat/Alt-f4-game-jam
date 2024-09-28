@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Background
-  m_Shader: {fileID: -6465566751694194690, guid: 1ff42cf399e3c174da490f27377d7b42, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 454c0f3f298edda4a8a98a1cbc0932f0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -42,12 +42,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlurAmount: 12.67
+    - _Fade_Amount: 0.5
     - _noise_1: 8
     - _noise_2: 9
     - _noise_3: 10
     - _pixel_size: 32.28
     - _speed: 1
-    m_Colors: []
+    m_Colors:
+    - _Fade_color: {r: 0.1764706, g: 0.32156864, b: 0.3882353, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4328595460725173533
 MonoBehaviour:
