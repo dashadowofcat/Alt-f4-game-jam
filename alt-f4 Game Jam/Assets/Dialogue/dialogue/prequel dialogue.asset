@@ -20,4 +20,4 @@ MonoBehaviour:
       game is #rebooting#'
   - Name: 
     Delay: 0.04
-    Text: "get to a safe folder or \nyou'll be #deleted#"
+    Text: "get to a save folder \nor you'll be #deleted#"
