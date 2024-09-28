@@ -10,6 +10,13 @@ public class Portal : MonoBehaviour
 
     public int HitPause;
 
+    [Header("Sound")]
+    public AudioClip TeleportSound;
+
+    public float PitchVariation;
+
+    public AudioSource Audio;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.transform.position = TeleportOutput.transform.position;
@@ -17,5 +24,16 @@ public class Portal : MonoBehaviour
         HitPauseManager.Pause(HitPause);
 
         CameraShake.Shake(Shake);
+
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        Audio.pitch = 1;
+
+        Audio.pitch += UnityEngine.Random.Range(-PitchVariation, PitchVariation);
+
+        Audio.PlayOneShot(TeleportSound);
     }
 }
