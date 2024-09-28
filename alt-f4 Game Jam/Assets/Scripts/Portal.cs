@@ -10,6 +10,8 @@ public class Portal : MonoBehaviour
 
     public int HitPause;
 
+    public bool ReturnPlayerToNormalState;
+
     [Header("Sound")]
     public AudioClip TeleportSound;
 
@@ -26,6 +28,8 @@ public class Portal : MonoBehaviour
         CameraShake.Shake(Shake);
 
         PlaySound();
+
+        if (collision.CompareTag("Player") && ReturnPlayerToNormalState) collision.GetComponent<GunHandler>().HasShotDownSinceTouchedGround = false;
     }
 
     private void PlaySound()
