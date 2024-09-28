@@ -13,6 +13,13 @@ public class PlayerMortality : MonoBehaviour
 
     public Level CurrentLevel;
 
+    [Header("Sound")]
+    public AudioClip DeathSound;
+
+    public float PitchVariation;
+
+    public AudioSource Audio;
+
 
     private SpriteRenderer sprite;
 
@@ -30,6 +37,7 @@ public class PlayerMortality : MonoBehaviour
     {
         if(collision.CompareTag("Hazard"))
         {
+            PlaySound();
             IsDead = true;
         }
     }
@@ -46,6 +54,15 @@ public class PlayerMortality : MonoBehaviour
         transform.position = CurrentLevel.RespawnAnchor.position;
 
         IsDead = false;
+    }
+
+    private void PlaySound()
+    {
+        Audio.pitch = 1;
+
+        Audio.pitch += UnityEngine.Random.Range(-PitchVariation, PitchVariation);
+
+        Audio.PlayOneShot(DeathSound);
     }
 
     public static PlayerMortality Get()

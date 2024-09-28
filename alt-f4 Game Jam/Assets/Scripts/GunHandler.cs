@@ -27,6 +27,14 @@ public class GunHandler : MonoBehaviour
 
     public float DownwardScreenShake;
 
+
+    [Header("Sound")]
+    public AudioClip ShootSound;
+
+    public float PitchVariation;
+
+    public AudioSource Audio;
+
     [HideInInspector] public bool HasShotDownSinceTouchedGround;
 
     [HideInInspector] public bool IsShootingSide;
@@ -34,7 +42,7 @@ public class GunHandler : MonoBehaviour
     private PlayerMovement Movement;
 
     void Start()
-    {
+    {;
         Movement = PlayerMovement.Get();
     }
 
@@ -61,6 +69,8 @@ public class GunHandler : MonoBehaviour
 
     public void Fire()
     {
+        PlaySound();
+
         IsShootingSide = true;
 
         Invoke("CancelIsShootingSide", .15f);
@@ -89,6 +99,8 @@ public class GunHandler : MonoBehaviour
 
     public void FireDown()
     {
+        PlaySound();
+
         Movement.CanjumpRelease = false;
 
         Movement.SetVelocity(new Vector2(0, DownwardRecoil));
@@ -96,6 +108,15 @@ public class GunHandler : MonoBehaviour
         CameraShake.Shake(new Vector2(0, DownwardRecoil) * DownwardScreenShake);
 
         HitPauseManager.Pause(HitPause);
+    }
+
+    private void PlaySound()
+    {
+        Audio.pitch = 1;
+
+        Audio.pitch += UnityEngine.Random.Range(-PitchVariation, PitchVariation);
+
+        Audio.PlayOneShot(ShootSound);
     }
 
     public static GunHandler Get()
