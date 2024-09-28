@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -19,6 +20,8 @@ public class Level : MonoBehaviour
     public Level[] LevelsToDisable;
 
     public bool PreloadLevel;
+
+    public bool FinalLevel;
 
 
     private void Awake()
@@ -50,6 +53,11 @@ public class Level : MonoBehaviour
         EnableLevel();
 
         FindObjectOfType<Camera>().transform.position = CameraAnchor.transform.position;
+
+        if(FinalLevel)
+        {
+            FindObjectsOfType<GlitchWall>().Where(G => G.name == "glitch wall").FirstOrDefault().gameObject.SetActive(false);
+        }
     }
 
     public void EnableLevel()
