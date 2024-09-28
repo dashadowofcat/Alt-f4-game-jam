@@ -21,6 +21,11 @@ public class CameraShake : MonoBehaviour
         velocity = Velocity;
     }
 
+    public static void Shake(float x)
+    {
+        velocity = new Vector2(x, velocity.y);
+    }
+
     private void FixedUpdate()
     {
         Vector2 heightOffset = basePosition - currentPosition;
