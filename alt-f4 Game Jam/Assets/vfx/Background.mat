@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlurAmount: 12.67
-    - _Fade_Amount: 0.5
+    - _Fade_Amount: 0.65
     - _noise_1: 8
     - _noise_2: 9
     - _noise_3: 10
