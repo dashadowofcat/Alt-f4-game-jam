@@ -7,7 +7,6 @@ using System.IO;
 using System.Threading;
 using UnityEngine.Events;
 using System.Linq;
-using UnityEditor.PackageManager;
 
 public class dialogue : MonoBehaviour
 {
