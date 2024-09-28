@@ -9,27 +9,45 @@ public class FallingIconsManager : MonoBehaviour
     public List<GameObject> icons = new List<GameObject>();
 
 
-    
+    public float minYtoDestroy;
 
+
+    public float timeUntilSpawn;
+
+
+    public float spinSpeed;
+
+    public float fallSpeed;
 
 
 
     void Update()
     {
-        Invoke("SpwanIcons",5f);
+        foreach (GameObject icon in SpawnedIcons)
+        {
+            icon.transform.position += new Vector3(0, -fallSpeed) * Time.deltaTime;
+
+            icon.transform.eulerAngles += new Vector3(0, 0, spinSpeed);
+
+            if (icon.transform.position.y <= minYtoDestroy)
+            {
+                SpawnedIcons.Remove(icon);
+                Destroy(icon.gameObject);
+            }
+        }
     }
 
     IEnumerator Start()
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(timeUntilSpawn);
 
-            print("poyo");
+            float randomino = Random.Range(-8, 8);
 
             GameObject IconToSpawn = icons[Random.Range(0, icons.Count)];
 
-            SpawnedIcons.Add(Instantiate(IconToSpawn));
+            SpawnedIcons.Add(Instantiate(IconToSpawn,transform.position = new Vector2(randomino,transform.position.y),Quaternion.identity));
         }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14dd349f1338c6942b5f2e7ed5ed1dd4
+guid: b9fdb8ad1b5311442acd3510b1451052
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AHHHH_0
+      name: minecraft_logo_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 12
-        width: 32
-        height: 32
+        x: 0
+        y: 18
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b294a849b499f545ac05ffeb562f97e
-      internalID: -73337667
+      spriteID: 04a4f76ff3b82aa4eaaf6f633d388f47
+      internalID: 1040315370
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AHHHH_0: -73337667
+      minecraft_logo_0: 1040315370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
