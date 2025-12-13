@@ -6,11 +6,18 @@ using UnityEngine;
 public class HitPauseManager : MonoBehaviour
 {
 
-    public static async void Pause(int ms)
+    public static void Pause(int ms)
+    {
+        HitPauseManager PauseManager = FindObjectOfType<HitPauseManager>();
+
+        PauseManager.StartCoroutine(PauseManager.IPause(ms));
+    }
+
+    public IEnumerator IPause(int ms)
     {
         Time.timeScale = 0;
 
-        await Task.Delay(ms);
+        yield return new WaitForSecondsRealtime(ms / 1000);
 
         Time.timeScale = 1;
     }
